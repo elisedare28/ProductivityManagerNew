@@ -32,7 +32,7 @@ router.get('/route', async (req, res) => {
     }
 });
 
-router.put('/route/:taskId', async (req, res) => {
+router.put('route/:taskId', async (req, res) => {
     const email = req.userEmail; 
     const { taskId } = req.params;
     const { task, status, deadline } = req.body;
