@@ -32,14 +32,14 @@ router.get('/route', async (req, res) => {
     }
 });
 
-router.put('route/:taskId', async (req, res) => {
+router.put('/route/:taskName', async (req, res) => {
     const email = req.userEmail; 
-    const { taskId } = req.params;
+    const { taskName } = req.params;
     const { task, status, deadline } = req.body;
 
     try {
         const updatedTask = await Task.findOneAndUpdate(
-            { _id: taskId, email },
+            { task: taskName, email },
             { task, status, deadline },
             { new: true, runValidators: true }
         );
@@ -52,12 +52,12 @@ router.put('route/:taskId', async (req, res) => {
     }
 });
 
-router.delete('/route/:taskId', async (req, res) => {
+router.delete('/route/:taskName', async (req, res) => {
     const email = req.userEmail;   
-    const { taskId } = req.params;
+    const { taskName } = req.params;
 
     try {
-        const result = await Task.deleteOne({ _id: taskId, email });
+        const result = await Task.deleteOne({ task: taskName, email });
         if (result.deletedCount === 0) return res.status(404).json({ message: 'Task not found' });
 
         res.json({ message: 'Task deleted' });
