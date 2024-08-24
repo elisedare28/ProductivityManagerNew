@@ -10,7 +10,7 @@ dotenv.config();
 
 const app = express();
 app.use(cors({
-    origin: 'https://website.com',
+    origin: [""],
     methods: ["POST", "GET", "DELETE", "PUT"],
     credentials: true
 }));
