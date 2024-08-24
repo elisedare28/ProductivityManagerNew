@@ -17,7 +17,7 @@ function Home({ user, token }) {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await axios.get('https://productivity-manager-new-api.vercel.app/api/tasks/routes/route', {
+        const response = await axios.get('https://productivity-manager-new-api.vercel.app/api/tasks/route', {
           headers: {
             Authorization: token
           }
