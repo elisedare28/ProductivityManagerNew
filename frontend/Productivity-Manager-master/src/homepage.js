@@ -80,7 +80,7 @@ function Home({ user, token }) {
       return;
     }
 
-    axios.put(`https://productivity-manager-new-api.vercel.app/api/tasks/${taskName}/route`, editedData,
+    axios.put(`https://productivity-manager-new-api.vercel.app/api/tasks/route/${taskName}`, editedData,
       { headers: { Authorization: token } }
     )
       .then(result => {
@@ -96,7 +96,7 @@ function Home({ user, token }) {
   };
 
   const deleteTask = (taskName) => {
-    axios.delete(`https://productivity-manager-new-api.vercel.app/api/tasks/${taskName}/route`,
+    axios.delete(`https://productivity-manager-new-api.vercel.app/api/tasks/route/${taskName}`,
       { headers: { Authorization: token } }
     )
       .then(result => {
