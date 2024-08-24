@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Task = require('../task');  
 
-router.post('/', async (req, res) => {
+router.post('/route', async (req, res) => {
     const { task, status, deadline } = req.body;
     const email = req.userEmail;  
 
@@ -21,7 +21,7 @@ router.post('/', async (req, res) => {
     }
 });
 
-router.get('/', async (req, res) => {
+router.get('/route', async (req, res) => {
     const email = req.userEmail; 
 
     try {
@@ -32,7 +32,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.put('/:taskId', async (req, res) => {
+router.put('/route/:taskId', async (req, res) => {
     const email = req.userEmail; 
     const { taskId } = req.params;
     const { task, status, deadline } = req.body;
@@ -52,7 +52,7 @@ router.put('/:taskId', async (req, res) => {
     }
 });
 
-router.delete('/:taskId', async (req, res) => {
+router.delete('/route/:taskId', async (req, res) => {
     const email = req.userEmail;   
     const { taskId } = req.params;
 

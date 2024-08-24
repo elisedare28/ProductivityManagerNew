@@ -9,12 +9,17 @@ const userRoutes = require('./routes/userRoutes');
 dotenv.config();
 
 const app = express();
+
 app.use(cors({
     origin: ["https://productivity-manager-new.vercel.app"],
-    methods: ["POST", "GET", "DELETE", "PUT"],
+    methods: ["POST", "GET", "DELETE", "PUT", "OPTIONS"],
     credentials: true
 }));
 app.use(express.json());
+
+app.get('/', (req, res) => {
+    res.send('Hello, world!');
+});
 
 mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log('Connected to MongoDB'))

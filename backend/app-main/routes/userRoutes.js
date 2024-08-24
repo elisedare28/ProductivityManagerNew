@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require('../user'); 
 
-router.post('/register', async (req, res) => {
+router.post('/route/register', async (req, res) => {
     const { email } = req.body;
 
     try {
@@ -20,7 +20,7 @@ router.post('/register', async (req, res) => {
     }
 });
 
-router.get('/:email', async (req, res) => {
+router.get('/route/:email', async (req, res) => {
     const { email } = req.params;
 
     try {
