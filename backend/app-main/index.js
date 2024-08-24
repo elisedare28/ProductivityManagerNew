@@ -10,7 +10,7 @@ dotenv.config();
 
 const app = express();
 app.use(cors({
-    origin: [""],
+    origin: ["https://productivity-manager-new.vercel.app"],
     methods: ["POST", "GET", "DELETE", "PUT"],
     credentials: true
 }));
