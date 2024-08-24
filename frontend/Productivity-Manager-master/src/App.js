@@ -15,7 +15,7 @@ const App = () => {
       setUser(user);
       setToken(token);
 
-      await fetch("http://localhost:5000/api/users/create", {
+      await fetch("https://productivity-manager-new-api.vercel.app/api/users/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -17,7 +17,7 @@ function Home({ user, token }) {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/tasks', {
+        const response = await axios.get('https://productivity-manager-new-api.vercel.app/api/tasks', {
           headers: {
             Authorization: token
           }
@@ -55,7 +55,7 @@ function Home({ user, token }) {
       return;
     }
 
-    axios.post('http://localhost:5000/api/tasks', 
+    axios.post('https://productivity-manager-new-api.vercel.app/api/tasks', 
       { task: newTask, status: newStatus, deadline: newDeadline },
       { headers: { Authorization: token } }
     )
@@ -80,7 +80,7 @@ function Home({ user, token }) {
       return;
     }
 
-    axios.put(`http://localhost:5000/api/tasks/${taskName}`, editedData,
+    axios.put(`https://productivity-manager-new-api.vercel.app/api/tasks/${taskName}`, editedData,
       { headers: { Authorization: token } }
     )
       .then(result => {
@@ -96,7 +96,7 @@ function Home({ user, token }) {
   };
 
   const deleteTask = (taskName) => {
-    axios.delete(`http://localhost:5000/api/tasks/${taskName}`,
+    axios.delete(`https://productivity-manager-new-api.vercel.app/api/tasks/${taskName}`,
       { headers: { Authorization: token } }
     )
       .then(result => {
